@@ -105,7 +105,7 @@ document.querySelector('.buttons').addEventListener('click', (event)=>{
     }   
 
     finish = true;
-    OUT.textContent = firstNumber;    
+    OUT.textContent = +firstNumber.toFixed(8);    
   }  
 })
 
