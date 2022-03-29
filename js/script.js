@@ -26,7 +26,20 @@ function delLastEl() {
   }
 }
 
+function plusMinus() {
+  if (firstNumber !== '' && sign === '') {
+    firstNumber = -firstNumber;    
+    OUT.textContent = firstNumber;  
+  }
+  else if (secondNumber !== '' && sign !== '') {
+    secondNumber = -secondNumber;    
+    OUT.textContent = secondNumber;   
+  }
+}
+
 document.querySelector('.delete').addEventListener('click', delLastEl);
+
+document.querySelector('.plus-minus').addEventListener('click', plusMinus);
 
 document.querySelector('.ac').addEventListener('click', clearAll);
 
@@ -35,17 +48,7 @@ document.querySelector('.buttons').addEventListener('click', (event)=>{
   if(!event.target.classList.contains('btn')) return;
 
   if(event.target.classList.contains('ac')) return;  
-  
-  // if(event.target.classList.contains('delete')) {
-  //   // firstNumber = firstNumber.slice(0, - 1)
-  //   // console.log('delete')
-  //   // console.log(OUT)
-  //   // OUT.textContent = firstNumber;
-  //   // return 
-  // }
-  
-  // OUT.textContent = '';  
-  
+   
   const KEY = event.target.textContent  
 
   if (DIGIT.includes(KEY)) {    
@@ -107,4 +110,3 @@ document.querySelector('.buttons').addEventListener('click', (event)=>{
 })
 
 // реализовать 8 наков после "."
-// реализовать "+/-"
